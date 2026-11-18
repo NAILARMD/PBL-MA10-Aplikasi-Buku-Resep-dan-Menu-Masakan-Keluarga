@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Formulir Tambah Resep Baru — DapurKatalog. Kelola bahan, takaran, dan langkah memasak secara sistematis." />
+<meta name="theme-color" content="#a9310f" />
+<title>Formulir Resep Masakan — DapurKatalog</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23a9310f'/%3E%3Ctext x='50' y='73' font-size='56' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800'%3ED%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<!-- ====== SVG ICON SPRITE ====== -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-menu" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></symbol>
+  <symbol id="i-plus-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></symbol>
+  <symbol id="i-pot" viewBox="0 0 24 24"><path d="M10 6c.7-.8.7-2 0-2.8"/><path d="M14 6c.7-.8.7-2 0-2.8"/><path d="M4 12h16"/><path d="M6 12v4.5A3.5 3.5 0 0 0 9.5 20h5a3.5 3.5 0 0 0 3.5-3.5V12"/><path d="M9.5 12V9.5h5V12"/></symbol>
+  <symbol id="i-category" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8l-9-5-9 5v8l9 5 9-5V8z"/><path d="M3.3 8.3L12 13l8.7-4.7"/><path d="M12 13v9"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.55-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34h0a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55h0a1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87v0a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.51 1z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 14.8 13.8"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-pencil" viewBox="0 0 24 24"><path d="M17 3a2.83 2.83 0 0 1 4 4L8 20l-5 1 1-5L17 3z"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+  <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="8.5 12 11 14.5 15.5 9.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+  <symbol id="i-chev-right" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></symbol>
+  <symbol id="i-arrow-left" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4.2 12.7c.7.6 1.2 1.4 1.2 2.3h6c0-.9.5-1.7 1.2-2.3A7 7 0 0 0 12 2z"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="11" x2="12" y2="16"/><line x1="12" y1="8" x2="12.01" y2="8"/></symbol>
+  <symbol id="i-alert-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="i-plus-row" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></symbol>
+  <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M6 2v7a2 2 0 0 0 2 2 2 2 0 0 0 2-2V2"/><path d="M8 11v11"/><path d="M18 2c-1.66 0-3 2.24-3 5s1.34 5 3 5V2z"/><path d="M18 12v10"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><line x1="10" y1="6" x2="21" y2="6"/><line x1="10" y1="12" x2="21" y2="12"/><line x1="10" y1="18" x2="21" y2="18"/><circle cx="4.6" cy="6" r="1.1" fill="currentColor" stroke="none"/><circle cx="4.6" cy="12" r="1.1" fill="currentColor" stroke="none"/><circle cx="4.6" cy="18" r="1.1" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 22a6.5 6.5 0 0 0 6.5-6.5c0-3.1-1.5-5.4-3.1-7.4-.5 1.5-1.5 2.6-2.9 3.3.4-2.3-.7-5-3.3-7.1.1 3.4-1.6 5.2-3.1 7.4-.9 1.5-1.6 3-1.6 4.9A6.5 6.5 0 0 0 12 22z"/></symbol>
+</svg>
+
+<!-- ====== SIDEBAR ====== -->
+<aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
+  <div class="sidebar-top">
+    <div class="side-logo">
+      <div class="logo-badge" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24"><use href="#i-pot"/></svg></div>
+      <div class="logo-text"><strong>DapurKatalog</strong><span>Manajemen Resep Masakan</span></div>
+    </div>
+    <div class="side-nav-wrap">
+      <p class="nav-caption">Menu Utama</p>
+      <nav class="side-nav">
+        <a class="nav-link" href="index.html"><svg class="icon" viewBox="0 0 24 24"><use href="#i-book"/></svg>Daftar Resep</a>
+        <a class="nav-link" href="rekap-resep.html"><svg class="icon" viewBox="0 0 24 24"><use href="#i-chart"/></svg>Rekap Resep</a>
+        <a class="nav-link active" href="tambah-resep.html" aria-current="page"><svg class="icon" viewBox="0 0 24 24"><use href="#i-plus-circle"/></svg>Tambah Resep Baru</a>
+        <a class="nav-link" href="inspeksi-resep.html"><svg class="icon" viewBox="0 0 24 24"><use href="#i-pot"/></svg>Inspeksi Resep</a>
+      </nav>
+    </div>
+    <div class="side-nav-wrap">
+      <p class="nav-caption">Inventori &amp; Sistem</p>
+      <nav class="side-nav">
+        <a class="nav-link" href="#" data-soon><svg class="icon" viewBox="0 0 24 24"><use href="#i-category"/></svg>Kategori Masakan</a>
+        <a class="nav-link" href="#" data-soon><svg class="icon" viewBox="0 0 24 24"><use href="#i-box"/></svg>Bahan &amp; Inventori</a>
+        <a class="nav-link" href="#" data-soon><svg class="icon" viewBox="0 0 24 24"><use href="#i-settings"/></svg>Pengaturan</a>
+      </nav>
+    </div>
+  </div>
+  <div class="side-foot">
+    <div class="status-card">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <div><strong>Dapur Beroperasi</strong><span>Sesi Aktif Siang</span></div>
+    </div>
+  </div>
+</aside>
+
+<div class="main-wrap">
+  <!-- ====== TOPBAR ====== -->
+  <header class="topbar">
+    <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Buka / tutup menu"><svg class="icon" viewBox="0 0 24 24"><use href="#i-menu"/></svg></button>
+    <div class="search-box" role="search">
+      <svg class="icon" viewBox="0 0 24 24"><use href="#i-search"/></svg>
+      <input type="search" id="globalSearch" placeholder="Cari resep, bumbu Nusantara, teknik masak... (Ctrl K)" aria-label="Pencarian global" />
+      <kbd>⌘K</kbd>
+    </div>
+    <div class="topbar-right">
+      <div class="time-chip" title="Waktu server Dapur Utama">
+        <svg class="icon" viewBox="0 0 24 24"><use href="#i-clock"/></svg>
+        <strong id="liveClock">--:--:-- WIB</strong>
+        <span>• Dapur Utama</span>
+      </div>
+      <button class="icon-btn" id="notifBtn" aria-label="Notifikasi">
+        <svg class="icon" viewBox="0 0 24 24"><use href="#i-bell"/></svg>
+        <span class="dot" aria-hidden="true"></span>
+      </button>
+      <div class="v-divider" aria-hidden="true"></div>
+      <div class="profile-chip">
+        <div class="avatar" aria-hidden="true">CDS</div>
+        <div><strong>Chef Dina S.</strong><span>Head Chef / Admin</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ====== KONTEN ====== -->
+  <main class="content">
+
+    <!-- Breadcrumb & header -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html"><svg class="icon" viewBox="0 0 24 24"><use href="#i-book"/></svg>Resep</a>
+      <svg class="icon" viewBox="0 0 24 24" style="width:13px;height:13px;color:var(--outline)"><use href="#i-chev-right"/></svg>
+      <strong>Tambah Resep Baru</strong>
+    </nav>
+
+    <div class="form-head">
+      <div>
+        <div class="page-eyebrow" style="margin-bottom:6px"><svg class="icon" viewBox="0 0 24 24"><use href="#i-plus-circle"/></svg>Workspace Chef</div>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px">
+          <h1 class="page-title" style="font-size:26px">Formulir Resep Masakan</h1>
+          <span class="mode-pill"><i></i>Mode: Tambah Resep Baru</span>
+        </div>
+      </div>
+      <div class="draft-progress" aria-label="Kelengkapan draf">
+        <div class="dp-text">
+          <svg class="icon" viewBox="0 0 24 24" style="width:17px;height:17px;color:var(--tertiary)"><use href="#i-check-circle"/></svg>
+          Kelengkapan Draf: <strong id="draftProgressText">0%</strong>
+        </div>
+        <div class="dp-track"><div class="dp-fill" id="draftProgressBar" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <form class="form-workspace" id="recipeForm" novalidate>
+
+      <!-- ===== KOLOM KIRI: INFORMASI DASAR ===== -->
+      <section class="panel" aria-labelledby="panelInfoTitle">
+        <div class="panel-head">
+          <div class="panel-title">
+            <div class="panel-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-info"/></svg></div>
+            <div><h2 id="panelInfoTitle">Informasi Dasar</h2><p>Detail identitas masakan &amp; karakteristik rasa</p></div>
+          </div>
+          <span class="panel-tag">Bagian 1/2</span>
+        </div>
+
+        <div class="form-grid">
+          <!-- Nama Resep -->
+          <div class="field full">
+            <label for="recipeTitle">Nama Resep <span class="req" title="Wajib diisi">*</span></label>
+            <div class="input-with-icon">
+              <input class="input" type="text" id="recipeTitle" name="recipeTitle" value="Rawon Daging Surabaya" placeholder="Contoh: Rawon Daging Surabaya" required aria-describedby="titleError" />
+              <svg class="icon" viewBox="0 0 24 24"><use href="#i-utensils"/></svg>
+            </div>
+            <p class="field-error" id="titleError" role="alert"><svg class="icon" viewBox="0 0 24 24" style="width:13px;height:13px"><use href="#i-alert-circle"/></svg>Field ini wajib diisi sebelum menyimpan data.</p>
+          </div>
+
+          <!-- Kategori -->
+          <div class="field">
+            <label for="recipeCategory">Kategori Masakan <span class="req">*</span></label>
+            <select class="input" id="recipeCategory" name="recipeCategory">
+              <option value="sarapan">Sarapan Pagi</option>
+              <option value="makan-siang" selected>Makan Siang</option>
+              <option value="makan-malam">Makan Malam</option>
+              <option value="camilan">Camilan &amp; Dessert</option>
+            </select>
+          </div>
+
+          <!-- Jumlah Porsi -->
+          <div class="field">
+            <label for="recipePortion">Jumlah Porsi <span class="req">*</span></label>
+            <div class="input-suffix-wrap">
+              <input class="input" type="number" id="recipePortion" name="recipePortion" value="4" min="1" max="100" />
+              <span class="suffix">Porsi</span>
+            </div>
+          </div>
+
+          <!-- Waktu Memasak -->
+          <div class="field">
+            <label for="cookingTime">Waktu Memasak <span class="req">*</span></label>
+            <div class="input-suffix-wrap">
+              <input class="input" type="number" id="cookingTime" name="cookingTime" value="60" min="5" step="5" />
+              <span class="suffix">Menit</span>
+            </div>
+          </div>
+
+          <!-- Asal Daerah -->
+          <div class="field">
+            <label for="originRegion">Asal Daerah</label>
+            <input class="input" type="text" id="originRegion" name="originRegion" value="Jawa Timur (Surabaya)" placeholder="e.g. Minangkabau" />
+          </div>
+
+          <!-- Deskripsi -->
+          <div class="field full">
+            <label for="recipeDescription">Deskripsi Masakan</label>
+            <textarea class="input" id="recipeDescription" name="recipeDescription" rows="4" placeholder="Ceritakan latar belakang, aroma, atau tips umum masakan ini...">Sup daging sapi kuah hitam pekat khas Jawa Timur dengan rempah kluwek pilihan. Dimasak perlahan agar kaldu gurih meresap sempurna ke dalam serat daging sandung lamur.</textarea>
+          </div>
+        </div>
+
+        <!-- Toggle favorit -->
+        <div class="switch-row" style="margin-top:16px">
+          <div class="switch-info">
+            <div class="switch-icon"><svg class="icon fill" viewBox="0 0 24 24"><use href="#i-star"/></svg></div>
+            <div><strong>Tandai sebagai Resep Favorit</strong><small>Munculkan di tab menu utama chef</small></div>
+          </div>
+          <label class="switch" for="favoriteToggle">
+            <input type="checkbox" id="favoriteToggle" checked />
+            <span class="slider" aria-hidden="true"></span>
+          </label>
+        </div>
+
+        <!-- Pratinjau kartu -->
+        <div class="preview-card" aria-label="Pratinjau kartu resep">
+          <img src="images/rawon.jpg" alt="Rawon Daging Surabaya" onerror="this.onerror=null;this.src='images/rendang.jpg'" />
+          <div style="min-width:0">
+            <span class="pc-eyebrow">Pratinjau Kartu</span>
+            <div class="pc-name" id="previewName">Rawon Daging Surabaya</div>
+            <div class="pc-meta">
+              <span><svg class="icon" viewBox="0 0 24 24"><use href="#i-clock"/></svg><span id="previewTime">60</span> Menit</span>
+              <span><svg class="icon" viewBox="0 0 24 24"><use href="#i-users"/></svg><span id="previewPortion">4</span> Porsi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aksi -->
+        <div class="form-actions">
+          <button class="btn btn-primary" type="submit">
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-save"/></svg>Simpan Resep
+          </button>
+          <button class="btn btn-soft" type="button" id="cancelFormBtn">
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-x"/></svg>Batal
+          </button>
+        </div>
+      </section>
+
+      <!-- ===== KOLOM KANAN: BAHAN & LANGKAH ===== -->
+      <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
+
+        <!-- Tabel Bahan -->
+        <section class="panel" aria-labelledby="panelBahanTitle">
+          <div class="panel-head">
+            <div class="panel-title">
+              <div class="panel-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-utensils"/></svg></div>
+              <div><h2 id="panelBahanTitle">Bahan Masakan &amp; Takaran</h2><p>Spesifikasi bumbu, daging, dan takaran porsi</p></div>
+            </div>
+            <span class="count-badge" id="ingredientCount">3 Bahan Ditambahkan</span>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data-table" id="ingredientTable">
+              <thead>
+                <tr><th class="center" style="width:44px">No</th><th>Nama Bahan</th><th class="right" style="width:100px">Jumlah</th><th style="width:110px">Satuan</th><th class="center" style="width:64px">Aksi</th></tr>
+              </thead>
+              <tbody id="ingredientTableBody"></tbody>
+            </table>
+          </div>
+          <button class="add-row-btn" type="button" id="addIngredientBtn">
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-plus-row"/></svg>+ Tambah Bahan
+          </button>
+        </section>
+
+        <!-- Tabel Langkah -->
+        <section class="panel" aria-labelledby="panelLangkahTitle">
+          <div class="panel-head">
+            <div class="panel-title">
+              <div class="panel-icon"><svg class="icon" viewBox="0 0 24 24"><use href="#i-list"/></svg></div>
+              <div><h2 id="panelLangkahTitle">Langkah &amp; Instruksi Memasak</h2><p>Panduan alur sistematis dapur komersial</p></div>
+            </div>
+            <span class="count-badge" id="stepCount">3 Langkah Tersusun</span>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data-table" id="stepTable">
+              <thead>
+                <tr><th class="center" style="width:120px">Urutan Langkah</th><th>Instruksi Memasak</th><th class="center" style="width:64px">Aksi</th></tr>
+              </thead>
+              <tbody id="stepTableBody"></tbody>
+            </table>
+          </div>
+          <button class="add-row-btn" type="button" id="addStepBtn">
+            <svg class="icon" viewBox="0 0 24 24"><use href="#i-plus-row"/></svg>+ Tambah Langkah
+          </button>
+        </section>
+
+        <!-- Tips Chef -->
+        <aside class="tips-box">
+          <svg class="icon" viewBox="0 0 24 24"><use href="#i-bulb"/></svg>
+          <div>
+            <strong>Tips Dapur Chef Dina:</strong><br />
+            Pastikan kluwek dicicipi sedikit sebelum dihaluskan; bila pahit jangan dipakai. Untuk tekstur rawon terbaik, biarkan kuah meresap semalaman (<em>slow resting</em>) sebelum disajikan dengan tauge pendek dan sambal terasi.
+          </div>
+        </aside>
+      </div>
+    </form>
+  </main>
+</div>
+
+<!-- ====== TOAST ====== -->
+<div class="toast" id="appToast" role="status" aria-live="polite">
+  <div class="toast-icon"><svg class="icon" id="toastIcon" viewBox="0 0 24 24" data-toast-icon><circle cx="12" cy="12" r="9"/><polyline points="8.5 12 11 14.5 15.5 9.5"/></svg></div>
+  <div class="toast-body"><strong id="toastTitle">Sukses Tersimpan</strong><span id="toastDesc">Resep berhasil disimpan ke katalog dapur!</span></div>
+  <button class="toast-close" id="toastClose" aria-label="Tutup notifikasi"><svg class="icon" viewBox="0 0 24 24"><use href="#i-x"/></svg></button>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+'use strict';
+
+/* Pencarian global: Enter -> arahkan ke daftar dengan query */
+const globalSearch = document.getElementById('globalSearch');
+globalSearch.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && globalSearch.value.trim()) {
+    window.location.href = 'index.html?q=' + encodeURIComponent(globalSearch.value.trim());
+  }
+});
+
+/* ============================================================
+   DATA AWAL BAHAN & LANGKAH
+   ============================================================ */
+let ingredientSeq = 0;
+let stepSeq = 0;
+
+const INITIAL_INGREDIENTS = [
+  { name: 'Daging Sapi Gandik / Sandung Lamur', qty: 500, unit: 'gram' },
+  { name: 'Kluwek tua pilihan (rendam air hangat)', qty: 4, unit: 'butir' },
+  { name: 'Serai aromatik (memarkan bagian putih)', qty: 2, unit: 'batang' }
+];
+const INITIAL_STEPS = [
+  'Rebus potongan daging sapi dengan 2 liter air hingga setengah empuk. Saring kaldu kotor pertama untuk menghasilkan kuah yang jernih dan beraroma segar.',
+  'Haluskan bawang merah, bawang putih, kluwek, kemiri, dan jahe. Tumis bersama serai dan daun jeruk sampai harum pekat dan keluar minyak kematangan rempah.',
+  'Masukkan tumisan bumbu ke dalam panci kaldu daging. Bumbui garam, gula, dan sedikit kaldu sapi. Masak dengan api kecil hingga daging empuk sempurna dan kuah meresap gelap.'
+];
+
+const ingredientBody = document.getElementById('ingredientTableBody');
+const stepBody = document.getElementById('stepTableBody');
+
+function addIngredientRow(data) {
+  ingredientSeq++;
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td class="center row-index"></td>
+    <td><input class="cell-input ing-name" type="text" placeholder="Nama bahan baru..." value="${data ? data.name : ''}" aria-label="Nama bahan" /></td>
+    <td class="right"><input class="cell-input ing-qty" type="number" min="0" placeholder="1" value="${data ? data.qty : ''}" style="text-align:right" aria-label="Jumlah" /></td>
+    <td><input class="cell-input ing-unit" type="text" placeholder="sdm / gram" value="${data ? data.unit : ''}" aria-label="Satuan" /></td>
+    <td class="center"><button type="button" class="row-del" data-remove aria-label="Hapus bahan"><svg class="icon" viewBox="0 0 24 24"><use href="#i-trash"/></svg></button></td>`;
+  ingredientBody.appendChild(tr);
+  renumberIngredients();
+  if (!data) tr.querySelector('.ing-name').focus();
+  updateDraftProgress();
+}
+
+function addStepRow(text) {
+  stepSeq++;
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td class="center"><span class="step-badge">Langkah ${stepBody.children.length + 1}</span></td>
+    <td><textarea class="cell-input step-text" rows="2" placeholder="Tulis instruksi langkah ini secara spesifik..." aria-label="Instruksi langkah">${text || ''}</textarea></td>
+    <td class="center"><button type="button" class="row-del" data-remove aria-label="Hapus langkah"><svg class="icon" viewBox="0 0 24 24"><use href="#i-trash"/></svg></button></td>`;
+  stepBody.appendChild(tr);
+  renumberSteps();
+  if (!text) tr.querySelector('.step-text').focus();
+  updateDraftProgress();
+}
+
+function renumberIngredients() {
+  [...ingredientBody.rows].forEach((row, i) => { row.cells[0].textContent = i + 1; });
+  document.getElementById('ingredientCount').textContent = `${ingredientBody.rows.length} Bahan Ditambahkan`;
+}
+function renumberSteps() {
+  [...stepBody.rows].forEach((row, i) => { row.querySelector('.step-badge').textContent = `Langkah ${i + 1}`; });
+  document.getElementById('stepCount').textContent = `${stepBody.rows.length} Langkah Tersusun`;
+}
+
+document.getElementById('addIngredientBtn').addEventListener('click', () => addIngredientRow(null));
+document.getElementById('addStepBtn').addEventListener('click', () => addStepRow(''));
+
+/* Hapus baris (delegasi) */
+ingredientBody.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-remove]');
+  if (btn) { btn.closest('tr').remove(); renumberIngredients(); updateDraftProgress(); }
+});
+stepBody.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-remove]');
+  if (btn) { btn.closest('tr').remove(); renumberSteps(); updateDraftProgress(); }
+});
+ingredientBody.addEventListener('input', updateDraftProgress);
+stepBody.addEventListener('input', updateDraftProgress);
+
+INITIAL_INGREDIENTS.forEach(addIngredientRow);
+INITIAL_STEPS.forEach(addStepRow);
+
+/* ============================================================
+   KELANGSUNGAN DRAF (progress kelengkapan) — dihitung live
+   ============================================================ */
+const titleInput = document.getElementById('recipeTitle');
+const portionInput = document.getElementById('recipePortion');
+const timeInput = document.getElementById('cookingTime');
+const regionInput = document.getElementById('originRegion');
+const categoryInput = document.getElementById('recipeCategory');
+const descInput = document.getElementById('recipeDescription');
+const previewName = document.getElementById('previewName');
+const previewTime = document.getElementById('previewTime');
+const previewPortion = document.getElementById('previewPortion');
+const progressBar = document.getElementById('draftProgressBar');
+const progressText = document.getElementById('draftProgressText');
+
+function ingredientFilledCount() {
+  return [...ingredientBody.querySelectorAll('.ing-name')].filter(el => el.value.trim()).length;
+}
+function stepFilledCount() {
+  return [...stepBody.querySelectorAll('.step-text')].filter(el => el.value.trim()).length;
+}
+
+function computeDraftScore() {
+  let score = 0;
+  if (titleInput.value.trim()) score += 25;
+  if (categoryInput.value) score += 10;
+  if (Number(portionInput.value) > 0) score += 10;
+  if (Number(timeInput.value) >= 5) score += 10;
+  if (regionInput.value.trim()) score += 10;
+  if (descInput.value.trim().length >= 20) score += 10;
+  if (ingredientFilledCount() >= 1) score += 12.5;
+  if (stepFilledCount() >= 1) score += 12.5;
+  return Math.round(score);
+}
+
+function updateDraftProgress() {
+  const score = computeDraftScore();
+  progressBar.style.width = score + '%';
+  progressText.textContent = score + '%';
+  /* Pratinjau kartu live */
+  previewName.textContent = titleInput.value.trim() || 'Nama resep tanpa judul';
+  previewTime.textContent = timeInput.value || '0';
+  previewPortion.textContent = portionInput.value || '0';
+}
+
+[titleInput, portionInput, timeInput, regionInput, categoryInput, descInput].forEach(el => {
+  el.addEventListener('input', updateDraftProgress);
+  el.addEventListener('change', updateDraftProgress);
+});
+
+/* ============================================================
+   VALIDASI & SIMPAN
+   ============================================================ */
+const titleError = document.getElementById('titleError');
+function validateTitle() {
+  const ok = Boolean(titleInput.value.trim());
+  titleInput.classList.toggle('error', !ok);
+  titleError.classList.toggle('show', !ok);
+  return ok;
+}
+titleInput.addEventListener('input', validateTitle);
+
+const form = document.getElementById('recipeForm');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!validateTitle()) { titleInput.focus(); return; }
+  sessionStorage.setItem('dk_just_saved', '1');
+  showToast('Sukses Tersimpan', `"${titleInput.value.trim()}" berhasil disimpan ke katalog dapur!`);
+});
+
+/* ============================================================
+   BATAL
+   ============================================================ */
+document.getElementById('cancelFormBtn').addEventListener('click', () => {
+  if (window.confirm('Batalkan perubahan dan kembali ke daftar resep? Data yang belum tersimpan akan hilang.')) {
+    window.location.href = 'index.html';
+  }
+});
+
+/* Init */
+updateDraftProgress();
+</script>
+</body>
+</html>
