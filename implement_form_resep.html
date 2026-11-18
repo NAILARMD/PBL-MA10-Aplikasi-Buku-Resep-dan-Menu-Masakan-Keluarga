@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-dim":"#cfdaf2","inverse-primary":"#ffb4a1","surface-variant":"#d8e3fb","on-surface-variant":"#59413b","tertiary-fixed-dim":"#4edea3","surface-container-low":"#f0f3ff","on-tertiary-fixed-variant":"#005236","inverse-on-surface":"#ecf1ff","on-tertiary-container":"#f5fff6","on-secondary":"#ffffff","surface-container":"#e7eeff","on-tertiary-fixed":"#002113","on-primary-fixed":"#3c0800","secondary-fixed-dim":"#ffb95f","on-error-container":"#93000a","on-background":"#111c2d","on-primary-container":"#fffbff","surface-bright":"#f9f9ff","on-surface":"#111c2d","surface-tint":"#ac3311","on-secondary-fixed-variant":"#653e00","tertiary-fixed":"#6ffbbe","inverse-surface":"#263143","on-secondary-container":"#684000","surface-container-highest":"#d8e3fb","tertiary":"#006947","surface":"#f9f9ff","secondary-fixed":"#ffddb8","secondary-container":"#fea619","outline":"#8d716a","tertiary-container":"#00855b","on-error":"#ffffff","primary-fixed":"#ffdbd1","on-primary":"#ffffff","error-container":"#ffdad6","on-secondary-fixed":"#2a1700","surface-container-high":"#dee8ff","secondary":"#855300","on-primary-fixed-variant":"#881f00","primary":"#a9310f","surface-container-lowest":"#ffffff","primary-fixed-dim":"#ffb4a1","error":"#ba1a1a","on-tertiary":"#ffffff","background":"#f9f9ff","outline-variant":"#e1bfb7","primary-container":"#cb4926"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter":"1.5rem","space-xs":"0.25rem","margin":"2rem","space-lg":"1.5rem","margin-lg":"3rem","space-md":"1rem","space-sm":"0.5rem","gutter-sm":"1rem","gutter-lg":"2rem","space-xl":"2.25rem","margin-sm":"1.25rem"},fontFamily:{"body-md":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"label-md":["Inter"],"body-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-lg":["Inter"],"label-sm":["Inter"]},fontSize:{"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-xl":["28px",{lineHeight:"36px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-sm":["18px",{lineHeight:"26px",letterSpacing:"0em",fontWeight:"600"}],"headline-lg":["22px",{lineHeight:"30px",letterSpacing:"-0.01em",fontWeight:"600"}],"display-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"body-sm":["13px",{lineHeight:"18px",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.04em",fontWeight:"600"}]}}}}</script></head><body class="bg-surface font-body-md text-on-surface min-h-screen selection:bg-primary selection:text-on-primary"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center gap-space-sm bg-surface-container-low/60"><img alt="DapurKatalog Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W4OIhby9v445T0mltKGRO2EtA9tQ4ZuhnN3SbMfAlrg13wqwSbwXR6Zq-kP7WWm5K2evjyqgrQdsZTXJDTYng8fpzeqToW4dzrvgWS6XsjUh_SzIxO2L5mw_MGLOfOlTrCEV6DWl634w6W2Sj-ce2j2zRKSv8Jj8FYgqS1DPooXgFaSArEiwc_LQgOMg_a2OTKSiCUIFzMFG1-vDl3v5IguGYf9CAyxrFd2F2gvB0"/><div class="flex flex-col min-w-0"><span class="font-headline-sm text-headline-sm text-primary tracking-tight truncate leading-tight">DapurKatalog</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Manajemen Resep Masakan</span></div></div><div class="px-space-md py-space-sm"><p class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Menu Utama</p><nav class="flex flex-col gap-space-xs mt-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="recipe-list" href="#"><span class="material-symbols-outlined text-[20px]">menu_book</span><span>Daftar Resep</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="recipe-summary" href="#"><span class="material-symbols-outlined text-[20px]">bar_chart</span><span>Rekap Resep</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 transition-all bg-primary-container text-on-primary-container font-semibold rounded-lg shadow-sm" data-path="recipe-form" href="#"><span class="material-symbols-outlined text-[20px]">add_circle</span><span>Tambah Resep Baru</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="recipe-detail" href="#"><span class="material-symbols-outlined text-[20px]">skillet</span><span>Inspeksi Resep</span></a></nav><div class="mt-space-md pt-space-md"><p class="px-space-sm py-space-xs font-label-sm text-label-sm uppercase tracking-wider text-outline">Inventori &amp; Sistem</p><nav class="flex flex-col gap-space-xs mt-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold rounded-lg"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="recipe-categories" href="#"><span class="material-symbols-outlined text-[20px]">category</span><span>Kategori Masakan</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="ingredients-inventory" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Bahan &amp; Inventori</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all font-label-lg text-label-lg" data-path="culinary-settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Pengaturan</span></a></nav></div></div></div><div class="p-space-md bg-surface-container-low/40"><div class="p-space-sm bg-surface-container rounded-lg flex items-center gap-space-sm"><div class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></div><div class="flex flex-col"><span class="font-label-sm text-label-sm text-tertiary font-semibold">Dapur Beroperasi</span><span class="font-label-sm text-label-sm text-on-surface-variant">Sesi Aktif Siang</span></div></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span><input class="w-full pl-9 pr-12 py-2 bg-surface-container-low rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#a9310f] transition-all" placeholder="Cari resep, bumbu Nusantara, teknik masak... (⌘K)" type="search"/><span class="absolute right-2.5 top-1/2 -translate-y-1/2 px-1.5 py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px]">⌘K</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-sm py-1.5 bg-surface-container-low rounded-lg text-on-surface-variant"><span class="material-symbols-outlined text-[18px] text-primary">schedule</span><span class="font-label-sm text-label-sm font-semibold text-on-surface">11:42 WIB</span><span class="font-label-sm text-label-sm text-outline">• Dapur Utama</span></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span></button><div class="h-6 w-px bg-outline-variant/30"></div><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP0L_2MzBGHG7Bey3CrLXnO6atdSTU6aglKHNVlNxcMQm36kVoh97M7l8LfKWxZkHpcAv2AivxtMFAUE2MjXthsT6h-WnFxUwmussskC8dGLE9sWYy6BBQJ6RWhXgkCM3e5bQU5kUyp6VVV_atolXsqPTyEjSZ0Z1NVC6pw0xDfE6c2FXXvCstPZWtxCLuyXVNjdBvVal3i2OYF3oXvUPCBYynPIT95xAfYq76U2I"/><div class="hidden sm:flex flex-col text-left"><span class="font-label-lg text-label-lg leading-tight text-on-surface">Chef Dina S.</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-tight">Head Chef / Admin</span></div></div></div></header><main class="w-full pt-16 bg-surface px-space-lg py-space-lg flex-1"><div class="flex flex-col w-full">
+<!-- Toast Notification Floating -->
+<div class="fixed top-20 right-8 z-50 flex items-center gap-space-md px-space-md py-space-sm bg-surface-container-lowest text-on-surface rounded-xl shadow-xl transition-all duration-300 transform translate-y-[-120%] opacity-0 pointer-events-none" id="saveToast">
+<div class="w-9 h-9 rounded-full bg-tertiary-container flex items-center justify-center text-on-tertiary-container shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col pr-space-sm">
+<span class="font-label-lg text-label-lg text-on-surface">Sukses Tersimpan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Resep berhasil disimpan ke katalog dapur!</span>
+</div>
+<button class="p-1 rounded-md text-outline hover:text-on-surface transition-colors" onclick="hideToast()" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Breadcrumb & Workspace Header -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col gap-space-xs">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-md text-label-md text-on-surface-variant">
+<a class="hover:text-primary transition-colors flex items-center gap-1" data-path="recipe-list" href="#">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Resep</span>
+</a>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="text-on-surface font-semibold">Tambah Resep Baru</span>
+</nav>
+<!-- Title & Context -->
+<div class="flex flex-wrap items-center gap-space-md mt-space-xs">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Formulir Resep Masakan</h1>
+<div class="flex items-center gap-space-xs px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span>Mode: Tambah Resep Baru</span>
+</div>
+</div>
+</div>
+<!-- Quick Stats Bar -->
+<div class="flex items-center gap-space-sm bg-surface-container-lowest px-space-md py-space-sm rounded-xl shadow-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary">check_circle</span>
+<span>Kelengkapan Draf: <strong class="text-on-surface font-semibold" id="draftProgress">85%</strong></span>
+</div>
+<div class="w-24 h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full transition-all duration-500" style="width: 85%"></div>
+</div>
+</div>
+</header>
+<!-- Split Grid Workspace (2 Columns) -->
+<form class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start" id="recipeForm" onsubmit="event.preventDefault(); handleSaveRecipe();">
+<!-- SISI KIRI: INFORMASI DASAR RESEP (5 Cols) -->
+<section class="lg:col-span-5 flex flex-col gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<!-- Section Title & Badge -->
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">info</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Informasi Dasar</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Detail identitas masakan &amp; karakteristik rasa</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Bagian 1/2</span>
+</div>
+<!-- Input: Nama Resep -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center gap-1" for="recipeTitle">
+<span>Nama Resep</span>
+<span class="text-error font-bold" title="Wajib diisi">*</span>
+</label>
+<div class="relative">
+<input class="w-full px-space-md py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#a9310f] transition-all" id="recipeTitle" name="recipeTitle" oninput="validateRequired(this, 'titleError')" placeholder="Contoh: Rawon Daging Surabaya" type="text" value="Rawon Daging Surabaya"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">restaurant_menu</span>
+</div>
+<!-- Error State Visual -->
+<p class="hidden text-error font-label-sm text-label-sm flex items-center gap-1 mt-0.5" id="titleError">
+<span class="material-symbols-outlined text-[14px]">error</span>
+<span>Field ini wajib diisi sebelum menyimpan data</span>
+</p>
+</div>
+<!-- Two-Column Group: Kategori & Porsi -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Pilihan Kategori -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center gap-1" for="recipeCategory">
+<span>Kategori Masakan</span>
+<span class="text-error font-bold">*</span>
+</label>
+<div class="relative">
+<select class="w-full appearance-none px-space-md py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#a9310f] transition-all cursor-pointer" id="recipeCategory" name="recipeCategory">
+<option value="sarapan">Sarapan Pagi</option>
+<option selected="" value="makan-siang">Makan Siang</option>
+<option value="makan-malam">Makan Malam</option>
+<option value="camilan">Camilan &amp; Dessert</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Input: Jumlah Porsi -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center gap-1" for="recipePortion">
+<span>Jumlah Porsi</span>
+<span class="text-error font-bold">*</span>
+</label>
+<div class="relative flex items-center">
+<input class="w-full pl-space-md pr-16 py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#a9310f] transition-all" id="recipePortion" max="100" min="1" name="recipePortion" type="number" value="4"/>
+<span class="absolute right-3 font-label-md text-label-md text-on-surface-variant font-medium pointer-events-none">
+              Porsi
+            </span>
+</div>
+</div>
+</div>
+<!-- Input: Waktu Memasak & Tingkat Kepedasan -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
+<!-- Waktu Memasak -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface flex items-center gap-1" for="cookingTime">
+<span>Waktu Memasak</span>
+<span class="text-error font-bold">*</span>
+</label>
+<div class="relative flex items-center">
+<input class="w-full pl-space-md pr-16 py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#a9310f] transition-all" id="cookingTime" min="5" name="cookingTime" step="5" type="number" value="60"/>
+<span class="absolute right-3 font-label-md text-label-md text-on-surface-variant font-medium pointer-events-none">
+              Menit
+            </span>
+</div>
+</div>
+<!-- Asal Daerah / Regional Tag (Metadata Nusantara) -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface" for="originRegion">
+<span>Asal Daerah</span>
+</label>
+<input class="w-full px-space-md py-2.5 bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#a9310f] transition-all" id="originRegion" name="originRegion" placeholder="e.g. Minangkabau" type="text" value="Jawa Timur (Surabaya)"/>
+</div>
+</div>
+<!-- Textarea: Deskripsi Masakan -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-lg text-label-lg text-on-surface" for="recipeDescription">
+<span>Deskripsi Masakan</span>
+</label>
+<textarea class="w-full p-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_2px_#a9310f] transition-all resize-none" id="recipeDescription" name="recipeDescription" placeholder="Ceritakan latar belakang, aroma, atau tips umum masakan ini..." rows="4">Sup daging sapi kuah hitam pekat khas Jawa Timur dengan rempah kluwek pilihan. Dimasak perlahan agar kaldu gurih meresap sempurna ke dalam serat daging sandung lamur.</textarea>
+</div>
+<!-- Switch / Checkbox: Tandai sebagai Resep Favorit -->
+<div class="flex items-center justify-between p-space-md bg-surface-container-low rounded-xl">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Tandai sebagai Resep Favorit</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Munculkan di tab menu utama chef</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="favoriteToggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<!-- Preview Kartu Ringkas (Visual Graphic) -->
+<div class="p-space-md rounded-xl bg-surface-container flex items-center gap-space-md">
+<img class="w-20 h-20 rounded-lg object-cover shrink-0" data-alt="Traditional dark Indonesian beef soup Rawon Surabaya served in a handcrafted clay bowl garnished with fresh bean sprouts, salted egg, and lime slice on an artisanal wooden table." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvzz5j_b2xGhAVmWAkSWY2Qv_hY2DiAdPjl8YhOVWVHYhBpJs3b894ZnKfPkw4tMSzSPywpnwPisX4y8Cbfs3Y44Uc_J-P8Uo0_UA3xV5n5KiyR3hwUH6MmgY9JE_K67pgqXqw5Eclk9IhzlNAn5D7D8XI79O2WZSQCHFgBF_hj0Sf3aIB0J5kKyTc-aYHC5HCKR9RLlKUEc47Hrsz3MphpX-kUJQQtepdFkKcPcA"/>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">Pratinjau Kartu</span>
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Rawon Daging Surabaya</span>
+<div class="flex items-center gap-space-xs mt-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span>60 Menit</span>
+<span>•</span>
+<span class="material-symbols-outlined text-[14px]">group</span>
+<span>4 Porsi</span>
+</div>
+</div>
+</div>
+<!-- Tombol Aksi Sisi Kiri (Desktop Sticky Actions) -->
+<div class="pt-space-md flex items-center gap-space-md">
+<button class="flex-1 flex items-center justify-center gap-space-sm h-11 px-space-lg bg-primary hover:bg-surface-tint active:scale-[0.99] text-on-primary font-label-lg text-label-lg rounded-lg shadow-sm transition-all" onclick="handleSaveRecipe()" type="button">
+<span class="material-symbols-outlined text-[20px]">save</span>
+<span>Simpan Resep</span>
+</button>
+<button class="flex items-center justify-center gap-space-xs h-11 px-space-md bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-lg text-label-lg rounded-lg transition-colors shadow-sm" onclick="handleCancel()" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline">close</span>
+<span>Batal</span>
+</button>
+</div>
+</section>
+<!-- SISI KANAN: BAHAN & LANGKAH MEMASAK (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- SECTION 1: TABEL BAHAN MASAKAN -->
+<section class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<!-- Header Section Bahan -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">egg_alt</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Bahan Masakan &amp; Takaran</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Spesifikasi bumbu, daging, dan takaran porsi</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-semibold" id="ingredientCount">
+            3 Bahan Ditambahkan
+          </span>
+</div>
+<!-- Tabel Bahan Masakan -->
+<div class="overflow-x-auto rounded-lg">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-space-sm w-12 text-center">No</th>
+<th class="py-2.5 px-space-sm">Nama Bahan</th>
+<th class="py-2.5 px-space-sm w-28 text-right">Jumlah</th>
+<th class="py-2.5 px-space-sm w-28">Satuan</th>
+<th class="py-2.5 px-space-sm w-16 text-center">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low" id="ingredientTableBody">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-2.5 px-space-sm text-center font-label-md text-label-md text-outline">1</td>
+<td class="py-2.5 px-space-sm">
+<input class="w-full px-2 py-1.5 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all" type="text" value="Daging Sapi Gandik / Sandung Lamur"/>
+</td>
+<td class="py-2.5 px-space-sm text-right">
+<input class="w-full text-right px-2 py-1.5 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all" type="number" value="500"/>
+</td>
+<td class="py-2.5 px-space-sm">
+<input class="w-full px-2 py-1.5 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all" type="text" value="gram"/>
+</td>
+<td class="py-2.5 px-space-sm text-center">
+<button class="p-1 rounded-md text-error hover:bg-error-container hover:text-on-error-container transition-colors" onclick="removeRow(this, 'ingredient')" title="Hapus Bahan" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-2.5 px-space-sm text-center font-label-md text-label-md text-outline">2</td>
+<td class="py-2.5 px-space-sm">
+<input class="w-full px-2 py-1.5 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all" type="text" value="Kluwek tua pilihan (rendam air hangat)"/>
+</td>
+<td class="py-2.5 px-space-sm text-right">
+<input class="w-full text-right px-2 py-1.5 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all" type="number" value="4"/>
+</td>
+<td class="py-2.5 px-space-sm">
+<input class="w-full px-2 py-1.5 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all" type="text" value="butir"/>
+</td>
+<td class="py-2.5 px-space-sm text-center">
+<button class="p-1 rounded-md text-error hover:bg-error-container hover:text-on-error-container transition-colors" onclick="removeRow(this, 'ingredient')" title="Hapus Bahan" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-2.5 px-space-sm text-center font-label-md text-label-md text-outline">3</td>
+<td class="py-2.5 px-space-sm">
+<input class="w-full px-2 py-1.5 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all" type="text" value="Serai aromatik (memarkan bagian putih)"/>
+</td>
+<td class="py-2.5 px-space-sm text-right">
+<input class="w-full text-right px-2 py-1.5 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all" type="number" value="2"/>
+</td>
+<td class="py-2.5 px-space-sm">
+<input class="w-full px-2 py-1.5 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all" type="text" value="batang"/>
+</td>
+<td class="py-2.5 px-space-sm text-center">
+<button class="p-1 rounded-md text-error hover:bg-error-container hover:text-on-error-container transition-colors" onclick="removeRow(this, 'ingredient')" title="Hapus Bahan" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Tombol Tambah Bahan -->
+<div class="flex justify-start">
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-surface-container-low hover:bg-surface-container text-primary font-label-lg text-label-lg rounded-lg transition-colors" onclick="addIngredientRow()" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Tambah Bahan</span>
+</button>
+</div>
+</section>
+<!-- SECTION 2: TABEL LANGKAH MEMASAK -->
+<section class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<!-- Header Section Langkah -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">format_list_numbered</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Langkah &amp; Instruksi Memasak</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Panduan alur sistematis dapur komersial</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-md bg-surface-container text-on-surface-variant font-semibold" id="stepCount">
+            3 Langkah Tersusun
+          </span>
+</div>
+<!-- Tabel Langkah Memasak -->
+<div class="overflow-x-auto rounded-lg">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-2.5 px-space-sm w-36 text-center">Urutan Langkah</th>
+<th class="py-2.5 px-space-sm">Instruksi Memasak</th>
+<th class="py-2.5 px-space-sm w-16 text-center">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-low" id="stepTableBody">
+<!-- Langkah 1 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-space-sm align-top text-center">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold step-badge">
+<span>Langkah 1</span>
+</div>
+</td>
+<td class="py-3 px-space-sm">
+<textarea class="w-full p-2 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all resize-none" rows="2">Rebus potongan daging sapi dengan 2 liter air hingga setengah empuk. Saring kaldu kotor pertama untuk menghasilkan kuah yang jernih dan beraroma segar.</textarea>
+</td>
+<td class="py-3 px-space-sm align-top text-center">
+<button class="p-1 rounded-md text-error hover:bg-error-container hover:text-on-error-container transition-colors" onclick="removeRow(this, 'step')" title="Hapus Langkah" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Langkah 2 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-space-sm align-top text-center">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold step-badge">
+<span>Langkah 2</span>
+</div>
+</td>
+<td class="py-3 px-space-sm">
+<textarea class="w-full p-2 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all resize-none" rows="2">Haluskan bawang merah, bawang putih, kluwek, kemiri, dan jahe. Tumis bersama serai dan daun jeruk sampai harum pekat dan keluar minyak kematangan rempah.</textarea>
+</td>
+<td class="py-3 px-space-sm align-top text-center">
+<button class="p-1 rounded-md text-error hover:bg-error-container hover:text-on-error-container transition-colors" onclick="removeRow(this, 'step')" title="Hapus Langkah" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+<!-- Langkah 3 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-3 px-space-sm align-top text-center">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold step-badge">
+<span>Langkah 3</span>
+</div>
+</td>
+<td class="py-3 px-space-sm">
+<textarea class="w-full p-2 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all resize-none" rows="2">Masukkan tumisan bumbu ke dalam panci kaldu daging. Bumbui garam, gula, dan sedikit kaldu sapi. Masak dengan api kecil hingga daging empuk sempurna dan kuah meresap gelap.</textarea>
+</td>
+<td class="py-3 px-space-sm align-top text-center">
+<button class="p-1 rounded-md text-error hover:bg-error-container hover:text-on-error-container transition-colors" onclick="removeRow(this, 'step')" title="Hapus Langkah" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Tombol Tambah Langkah -->
+<div class="flex justify-start">
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-surface-container-low hover:bg-surface-container text-primary font-label-lg text-label-lg rounded-lg transition-colors" onclick="addStepRow()" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ Tambah Langkah</span>
+</button>
+</div>
+</section>
+<!-- Chef's Internal Notes Card -->
+<aside class="p-space-md rounded-xl bg-surface-container-low flex items-start gap-space-md text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">tips_and_updates</span>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-lg text-label-lg text-on-surface">Tips Dapur Chef Dina:</span>
+<p class="font-body-sm text-body-sm leading-relaxed">
+            Pastikan kluwek dicicipi sedikit sebelum dihaluskan; bila pahit jangan dipakai. Untuk tekstur rawon terbaik, biarkan kuah meresap semalaman (slow resting) sebelum disajikan dengan tauge pendek dan sambal terasi.
+          </p>
+</div>
+</aside>
+</div>
+</form>
+<script>
+    // Validasi field wajib
+    function validateRequired(input, errorId) {
+      const errElem = document.getElementById(errorId);
+      if (!input.value.trim()) {
+        input.classList.add('bg-error-container/30', 'focus:shadow-[0_0_0_2px_#ba1a1a]');
+        if (errElem) errElem.classList.remove('hidden');
+        return false;
+      } else {
+        input.classList.remove('bg-error-container/30', 'focus:shadow-[0_0_0_2px_#ba1a1a]');
+        if (errElem) errElem.classList.add('hidden');
+        return true;
+      }
+    }
+
+    // Tambah Baris Bahan
+    function addIngredientRow() {
+      const tbody = document.getElementById('ingredientTableBody');
+      const currentRows = tbody.querySelectorAll('tr').length;
+      const newIndex = currentRows + 1;
+
+      const tr = document.createElement('tr');
+      tr.className = 'hover:bg-surface-container-low/40 transition-colors animate-fadeIn';
+      tr.innerHTML = `
+        <td class="py-2.5 px-space-sm text-center font-label-md text-label-md text-outline">${newIndex}</td>
+        <td class="py-2.5 px-space-sm">
+          <input type="text" placeholder="Nama bahan baru..." class="w-full px-2 py-1.5 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all">
+        </td>
+        <td class="py-2.5 px-space-sm text-right">
+          <input type="number" placeholder="1" class="w-full text-right px-2 py-1.5 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all">
+        </td>
+        <td class="py-2.5 px-space-sm">
+          <input type="text" placeholder="sdm / gram" class="w-full px-2 py-1.5 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all">
+        </td>
+        <td class="py-2.5 px-space-sm text-center">
+          <button type="button" onclick="removeRow(this, 'ingredient')" title="Hapus Bahan" class="p-1 rounded-md text-error hover:bg-error-container hover:text-on-error-container transition-colors">
+            <span class="material-symbols-outlined text-[18px]">delete</span>
+          </button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+      updateIngredientBadges();
+    }
+
+    // Tambah Baris Langkah
+    function addStepRow() {
+      const tbody = document.getElementById('stepTableBody');
+      const currentRows = tbody.querySelectorAll('tr').length;
+      const newIndex = currentRows + 1;
+
+      const tr = document.createElement('tr');
+      tr.className = 'hover:bg-surface-container-low/40 transition-colors animate-fadeIn';
+      tr.innerHTML = `
+        <td class="py-3 px-space-sm align-top text-center">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-primary-container text-on-primary-container font-label-sm text-label-sm font-semibold step-badge">
+            <span>Langkah ${newIndex}</span>
+          </div>
+        </td>
+        <td class="py-3 px-space-sm">
+          <textarea rows="2" placeholder="Tulis instruksi langkah ini secara spesifik..." class="w-full p-2 bg-surface-container-low/60 rounded font-body-sm text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest focus:shadow-[0_0_0_1px_#a9310f] transition-all resize-none"></textarea>
+        </td>
+        <td class="py-3 px-space-sm align-top text-center">
+          <button type="button" onclick="removeRow(this, 'step')" title="Hapus Langkah" class="p-1 rounded-md text-error hover:bg-error-container hover:text-on-error-container transition-colors">
+            <span class="material-symbols-outlined text-[18px]">delete</span>
+          </button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+      updateStepBadges();
+    }
+
+    // Hapus Baris & Re-indexing
+    function removeRow(button, type) {
+      const row = button.closest('tr');
+      row.remove();
+      if (type === 'ingredient') {
+        updateIngredientBadges();
+      } else {
+        updateStepBadges();
+      }
+    }
+
+    function updateIngredientBadges() {
+      const tbody = document.getElementById('ingredientTableBody');
+      const rows = tbody.querySelectorAll('tr');
+      rows.forEach((r, idx) => {
+        const noCell = r.querySelector('td:first-child');
+        if (noCell) noCell.textContent = idx + 1;
+      });
+      document.getElementById('ingredientCount').textContent = `${rows.length} Bahan Ditambahkan`;
+    }
+
+    function updateStepBadges() {
+      const tbody = document.getElementById('stepTableBody');
+      const rows = tbody.querySelectorAll('tr');
+      rows.forEach((r, idx) => {
+        const badge = r.querySelector('.step-badge span');
+        if (badge) badge.textContent = `Langkah ${idx + 1}`;
+      });
+      document.getElementById('stepCount').textContent = `${rows.length} Langkah Tersusun`;
+    }
+
+    // Penanganan Simpan Resep & Feedback Toast
+    function handleSaveRecipe() {
+      const titleInput = document.getElementById('recipeTitle');
+      const isValid = validateRequired(titleInput, 'titleError');
+
+      if (!isValid) {
+        titleInput.focus();
+        return;
+      }
+
+      // Tampilkan toast
+      const toast = document.getElementById('saveToast');
+      toast.classList.remove('translate-y-[-120%]', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        hideToast();
+      }, 4000);
+    }
+
+    function hideToast() {
+      const toast = document.getElementById('saveToast');
+      toast.classList.add('translate-y-[-120%]', 'opacity-0', 'pointer-events-none');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }
+
+    function handleCancel() {
+      if (confirm('Batalkan perubahan dan kembali ke daftar resep? Data yang belum tersimpan akan hilang.')) {
+        window.location.hash = 'recipe-list';
+      }
+    }
+  </script>
+</div></main></div></body></html>
